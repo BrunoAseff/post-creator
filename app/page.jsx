@@ -3,6 +3,8 @@ import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 async function GetPosts() {
   const posts = await prisma.post.findMany({
     where: { published: true },
